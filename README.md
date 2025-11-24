@@ -2,8 +2,8 @@
 
 ![Project Status](https://img.shields.io/badge/Status-Live-success) ![Docker](https://img.shields.io/badge/Docker-Supported-blue) ![Stack](https://img.shields.io/badge/Tech-FastAPI%20%7C%20Unity%20%7C%20Gemini-orange)
 
-> **[🔴 LIVE DEMO: Chat with Veena Here](https://your-render-app-name.onrender.com)**
-> *(Replace the link above once you deploy to Render)*
+> **[🔴 LIVE DEMO: Chat with Veena Here](https://veena-avatar.onrender.com/)**
+> *This works only on chrome desktop. Because of using native TTS.*
 
 **Veena** is a real-time, full-stack 3D avatar chatbot. She listens to voice input via the browser, "thinks" using Google's Gemini 2.5 Flash model, and responds with synchronized lip-sync and procedural animations.
 
@@ -138,6 +138,7 @@ This project is configured for one-click deployment on **Render**.
 ├── Dockerfile               # Production Image Build Instructions
 ├── docker-compose.yml       # Local Development Container Config
 └── requirements.txt         # Python Dependencies
+
 
 
 
