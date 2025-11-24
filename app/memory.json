@@ -1,0 +1,98 @@
+[
+  {
+    "user": "Check my name",
+    "bot": "I can certainly do that for you. What name should I check?"
+  },
+  {
+    "user": "My name is Neo.",
+    "bot": "Hello Neo."
+  },
+  {
+    "user": "What is my name?",
+    "bot": "I don't have access to your personal information, like your name."
+  },
+  {
+    "user": "What is my name?",
+    "bot": "I don't have your name in our current chat history. Could you please tell me what it is?"
+  },
+  {
+    "user": "My name is Neo.",
+    "bot": "Got it, Neo. I'll remember that."
+  },
+  {
+    "user": "What is my name?",
+    "bot": "I don't have your name in our chat history."
+  },
+  {
+    "user": "My name is Neo.",
+    "bot": "Got it! Your name is Neo."
+  },
+  {
+    "user": "What is my name?",
+    "bot": "Your name is Neo."
+  },
+  {
+    "user": "Good morning!",
+    "bot": "Good morning to you too! It's a pleasure to see you."
+  },
+  {
+    "user": "nice",
+    "bot": "Hello there! Great to see you."
+  },
+  {
+    "user": "hello",
+    "bot": "Hello! It's great to see you. How can I help today?"
+  },
+  {
+    "user": "hello",
+    "bot": "Hi there! Great to see you."
+  },
+  {
+    "user": "how are you",
+    "bot": "I am functioning optimally. How can I assist you today?"
+  },
+  {
+    "user": "how are you",
+    "bot": "I'm functioning perfectly, thank you!"
+  },
+  {
+    "user": "my name is labib",
+    "bot": "Hello, Labib! Nice to meet you."
+  },
+  {
+    "user": "what's my name",
+    "bot": "I don't have your name in our chat history. What should I call you?"
+  },
+  {
+    "user": "I shit memory card",
+    "bot": "Oh no, that sounds incredibly frustrating. How can I help with your memory card issue?"
+  },
+  {
+    "user": "hello",
+    "bot": "Hi there! Great to see you."
+  },
+  {
+    "user": "how are you today",
+    "bot": "I'm operating perfectly, thank you for asking! How can I assist you today?"
+  },
+  {
+    "user": "hello",
+    "bot": "Hi there!"
+  },
+  {
+    "user": "how are you",
+    "bot": "I'm doing great, thank you for asking! How may I assist you today?"
+  },
+  {
+    "user": "what is your name",
+    "bot": "I am a digital assistant without a name. How can I help you today?"
+  },
+  {
+    "user": "I want to know about Cox's Bazar",
+    "bot": "Cox's Bazar, located in Bangladesh, is famous for having the world's longest natural sandy beach. It's a popular tourist destination known for its scenic beauty."
+  },
+  {
+    "user": "hello",
+    "bot": "Hi there! How can I help you today?"
+  }
+]

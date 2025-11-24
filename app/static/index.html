@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Avatar Chat</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #121212; 
+            color: white; 
+            margin: 0; 
+            /* FIXED: Ensure the page never scrolls */
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        /* 1. The Avatar View */
+        #unity-container { 
+            position: relative; 
+            width: 100%; 
+            /* FIXED: These two lines stop the infinite stretching */
+            flex-grow: 1; 
+            overflow: hidden; 
+            background: #000;
+        }
+        
+        #unity-canvas { 
+            /* FIXED: Force canvas to fit container exactly */
+            display: block; 
+            width: 100%; 
+            height: 100%; 
+            background: #232323; 
+        }
+
+        /* 2. The Chat Bar Container */
+        #ui-layer {
+            width: 100%;
+            background: #1e1e1e;
+            padding: 20px;
+            box-sizing: border-box;
+            border-top: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+            /* FIXED: Prevent UI from getting squashed */
+            flex-shrink: 0; 
+        }
+
+        #status { 
+            color: #888; 
+            font-size: 14px; 
+            margin-left: 10px;
+            height: 20px; 
+        }
+
+        /* Input Group */
+        .input-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #chat-input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #444;
+            background: #2c2c2c;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        #chat-input:focus { border-color: #4CAF50; }
+        #chat-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Buttons */
+        .icon-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        #mic-btn { background: #444; color: white; }
+        #mic-btn.listening { background: #f44336; animation: pulse 1.5s infinite; }
+        #mic-btn:hover:not(:disabled) { background: #666; }
+        
+        #send-btn { background: #4CAF50; color: white; }
+        #send-btn:hover:not(:disabled) { background: #45a049; }
+        #send-btn:disabled { background: #555; cursor: not-allowed; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(244, 67, 54, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="unity-container">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+    </div>
+
+    <div id="ui-layer">
+        <div id="status">Wait for Veena to load...</div>
+        
+        <div class="input-group">
+            <button id="mic-btn" class="icon-btn" title="Speak">🎤</button>
+            <input type="text" id="chat-input" placeholder="Type a message or use voice..." autocomplete="off">
+            <button id="send-btn" class="icon-btn" title="Send">➤</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    
+    <script src="/static/unity/Build/unity.loader.js"></script>
+
+    <script>
+        var canvas = document.querySelector("#unity-canvas");
+        var buildUrl = "/static/unity/Build";
+        
+        // CHECK YOUR FOLDER: Use .unityweb if compression is ON, remove if OFF
+        var config = {
+            dataUrl: buildUrl + "/unity.data.unityweb",
+            frameworkUrl: buildUrl + "/unity.framework.js.unityweb",
+            codeUrl: buildUrl + "/unity.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "unity",
+            productVersion: "0.1",
+            devicePixelRatio: 1, 
+        };
+
+        var unityInstance = null;
+        
+        createUnityInstance(canvas, config, (progress) => {
+            document.getElementById('status').textContent = "Loading Veena: " + Math.round(progress * 100) + "%";
+        }).then((instance) => {
+            unityInstance = instance;
+            document.getElementById('status').textContent = "Veena is ready. Chat with her!";
+            // Enable controls once loaded
+            document.getElementById('chat-input').disabled = false;
+            document.getElementById('send-btn').disabled = false;
+        }).catch((message) => {
+            alert("Unity Load Error: " + message);
+        });
+    </script>
+
+    <script type="module" src="/static/main.js"></script>
+</body>
+</html>
