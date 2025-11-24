@@ -9,8 +9,8 @@
 
 Unlike standard text chatbots, Veena is built to have **presence**. She waves when greeted, thinks when queried, and speaks naturally using browser-native text-to-speech.
 
-![Screenshot of Veena](path/to/screenshot.png)
-*(Add a screenshot of your Unity scene here)*
+![Uploading {B86C0C54-6FC0-40B7-B6C6-DE4EDD5E0F74}.png…]()
+
 
 ---
 
@@ -137,3 +137,4 @@ This project is configured for one-click deployment on **Render**.
 ├── Dockerfile               # Production Image Build Instructions
 ├── docker-compose.yml       # Local Development Container Config
 └── requirements.txt         # Python Dependencies
+
