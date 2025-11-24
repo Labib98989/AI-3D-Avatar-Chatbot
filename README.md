@@ -57,8 +57,8 @@ This is the recommended way to run the project. It ensures all dependencies matc
 ### Steps
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/veena-avatar.git](https://github.com/yourusername/veena-avatar.git)
-    cd veena-avatar
+    git clone [https://github.com/yourusername/AI-3D-Avatar-Chatbot.git](https://github.com/Labib98989/AI-3D-Avatar-Chatbot)
+    cd AI-3D-Avatar-Chatbot
     ```
 
 2.  **Create the Environment file:**
@@ -138,5 +138,6 @@ This project is configured for one-click deployment on **Render**.
 ├── Dockerfile               # Production Image Build Instructions
 ├── docker-compose.yml       # Local Development Container Config
 └── requirements.txt         # Python Dependencies
+
 
 
