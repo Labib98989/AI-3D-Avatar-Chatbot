@@ -46,12 +46,12 @@ export function speak(text, onStartCallback, onEndCallback) {
 
   utterance.onstart = () => {
     isSpeaking = true;
-    console.log("[DEBUG] Speaking started:", utterance.text);
+    //console.log("[DEBUG] Speaking started:", utterance.text);
     if (onStartCallback) onStartCallback(); // Notify Unity
   };
   utterance.onend = () => {
     isSpeaking = false;
-    console.log("[DEBUG] Speaking finished.");
+    //console.log("[DEBUG] Speaking finished.");
     if (onEndCallback) onEndCallback(); // Notify Unity
   };
   utterance.onerror = (e) => {
@@ -73,11 +73,12 @@ export function stopSpeaking() {
   if (window.speechSynthesis.speaking) {
     window.speechSynthesis.cancel();
     isSpeaking = false;
-    console.log("[DEBUG] Speech stopped manually.");
+    //console.log("[DEBUG] Speech stopped manually.");
   }
 }
 
 // --- Clean up on unload ---
 window.addEventListener("beforeunload", () => {
   if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+
 });
