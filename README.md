@@ -9,7 +9,8 @@
 
 Unlike standard text chatbots, Veena is built to have **presence**. She waves when greeted, thinks when queried, and speaks naturally using browser-native text-to-speech.
 
-![Uploading {B86C0C54-6FC0-40B7-B6C6-DE4EDD5E0F74}.png…]()
+<img width="1920" height="945" alt="{B86C0C54-6FC0-40B7-B6C6-DE4EDD5E0F74}" src="https://github.com/user-attachments/assets/3528f902-7157-4a56-a830-e50262b85b3c" />
+
 
 
 ---
@@ -137,4 +138,5 @@ This project is configured for one-click deployment on **Render**.
 ├── Dockerfile               # Production Image Build Instructions
 ├── docker-compose.yml       # Local Development Container Config
 └── requirements.txt         # Python Dependencies
+
 
