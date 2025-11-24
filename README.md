@@ -5,7 +5,7 @@ It listens to your voice, processes the intent using Google's Gemini 2.5 Flash m
 and responds with synchronized lip-sync and procedural animations.
 
 ![Demo Screenshot](path_to_screenshot.png) 
-*(Tip: Take a screenshot of Veena and put it in the repo)*
+**
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML5, Vanilla JavaScript (ES6 Modules)
@@ -27,4 +27,5 @@ and responds with synchronized lip-sync and procedural animations.
 2. Create a `.env` file with your API key: `GEMINI_API_KEY=your_key_here`
 3. Run:
    ```bash
+
    docker compose up
