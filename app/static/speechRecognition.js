@@ -46,7 +46,7 @@ function initRecognition() {
       finalText.trim() !== lastFinalTranscript
     ) {
       lastFinalTranscript = finalText.trim();
-      console.log("[DEBUG] Final Transcript:", lastFinalTranscript);
+      //console.log("[DEBUG] Final Transcript:", lastFinalTranscript);
       if (typeof recognition.onTranscript === "function") {
         recognition.onTranscript(lastFinalTranscript);
       }
@@ -67,7 +67,7 @@ function initRecognition() {
   };
 
   recognition.onend = () => {
-    console.log("[DEBUG] Recognition ended.");
+    //console.log("[DEBUG] Recognition ended.");
     isListening = false;
   };
 
@@ -80,7 +80,7 @@ export function startListening(onTranscript, onInterim) {
   if (!recognition) return;
 
   if (isListening) {
-    console.log("[DEBUG] Already listening.");
+    //console.log("[DEBUG] Already listening.");
     return;
   }
 
@@ -94,7 +94,7 @@ export function startListening(onTranscript, onInterim) {
   try {
     recognition.start();
     isListening = true;
-    console.log("[DEBUG] Listening started.");
+    //console.log("[DEBUG] Listening started.");
   } catch (e) {
     console.error("SpeechRecognition start failed:", e);
     lastError = e.message;
@@ -105,7 +105,7 @@ export function stopListening() {
   if (recognition && isListening) {
     recognition.stop();
     isListening = false;
-    console.log("[DEBUG] Listening stopped.");
+    //console.log("[DEBUG] Listening stopped.");
   }
 }
 
@@ -129,4 +129,5 @@ export function isSpeechSupported() {
 
 window.addEventListener("beforeunload", () => {
   if (recognition && isListening) recognition.stop();
+
 });
